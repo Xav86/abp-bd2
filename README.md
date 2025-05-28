@@ -1,13 +1,17 @@
-## Projeto Sistema de Atividades Especiais - GRUPO A
+## Projeto Sistema de Manutenção de Veiculos - GRUPO B
 
-Este projeto consiste na criação de um modelo físico de um banco de dados para um sistema XYZ.
-O projeto foi desenvolvido em C# .NET, criando um CRUD para cadastro dos itens xyz, onde a aplicacao faz conexão com o banco de dados através de uma biblioteca chamada entity framework e realiza operações de adição, aualização e deleção dos dados, usando todos os conceitos e dinâmicas práticas de SQL desenvolvidas em aula.
+Este projeto consiste na criação de um modelo físico de um banco de dados para um sistema de manutenção de veiculos.
+O projeto foi desenvolvido em **XXXX**, criando um CRUD para cadastro dos itens **XXXX**, onde a aplicacao faz conexão com o banco de dados através de uma biblioteca chamada **XXXX** e realiza operações de adição, aualização e deleção dos dados, usando todos os conceitos e dinâmicas práticas de SQL desenvolvidas em aula.
 
 ### Integrantes
-Jorge Luiz da Silva - jlsilva01<br>
-Integrante 2 - conta github<br>
-Integrante 3 - conta github<br>
-...
+Calebe Arlan Souza da Silva - CalebeArlan<br>
+Caio dos Santos Lopes - caiolopesxd<br>
+Gustavo Gonçalves dos Santos - Xav86<br>
+Lucas Pizoni Flores - LuxLucas<br>
+Matheus Araújo de Melo - **XXXX**
+
+---
+# --- ainda em andamento ---
 
 ### Modelo Físico
 Utilizamos a ferramenta de modelagem de dados [dbdiagram.io](https://dbdiagram.io/) para criação do modelo físico do banco de dados, para posterior exportação dos scripts DDL das tabelas e relacionamentos.<br>
