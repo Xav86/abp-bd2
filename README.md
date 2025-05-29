@@ -1,7 +1,7 @@
 ## Projeto Sistema de Manutenção de Veiculos - GRUPO B
 
 Este projeto consiste na criação de um modelo físico de um banco de dados para um sistema de manutenção de veiculos.
-O projeto foi desenvolvido em **XXXX**, criando um CRUD para cadastro dos itens **XXXX**, onde a aplicacao faz conexão com o banco de dados através de uma biblioteca chamada **XXXX** e realiza operações de adição, aualização e deleção dos dados, usando todos os conceitos e dinâmicas práticas de SQL desenvolvidas em aula.
+O projeto foi desenvolvido em PHP, criando um CRUD para cadastro dos itens **XXXX**, onde a aplicacao faz conexão com o banco de dados através de uma biblioteca chamada **XXXX** e realiza operações de adição, aualização e deleção dos dados, usando todos os conceitos e dinâmicas práticas de SQL desenvolvidas em aula.
 
 ### Integrantes
 Calebe Arlan Souza da Silva - CalebeArlan<br>
