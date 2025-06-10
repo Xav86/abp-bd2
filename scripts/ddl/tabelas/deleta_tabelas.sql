@@ -23,17 +23,17 @@ WHERE name IN (
 EXEC sp_executesql @sql;
 
 /* Drop Tables */
+DROP TABLE IF EXISTS [Historico_Ordens];
+DROP TABLE IF EXISTS [Pecas_OS];
+DROP TABLE IF EXISTS [Itens_Servico_OS];
+DROP TABLE IF EXISTS [Funcionarios_OS];
+DROP TABLE IF EXISTS [Ordens_de_Servico];
+DROP TABLE IF EXISTS [Servicos];
+DROP TABLE IF EXISTS [Veiculos];
+DROP TABLE IF EXISTS [Funcionarios];
+DROP TABLE IF EXISTS [Cliente_Juridico];
+DROP TABLE IF EXISTS [Cliente_Fisico];
+DROP TABLE IF EXISTS [Enderecos];
+DROP TABLE IF EXISTS [Pecas_Estoque];
+DROP TABLE IF EXISTS [Pessoas];
 
-DROP TABLE IF EXISTS Funcionarios_OS;
-DROP TABLE IF EXISTS Itens_Servico_OS;
-DROP TABLE IF EXISTS Pecas_OS;
-DROP TABLE IF EXISTS Ordens_de_Servico;
-DROP TABLE IF EXISTS Veiculos;
-DROP TABLE IF EXISTS Pecas_Estoque;
-DROP TABLE IF EXISTS Servicos;
-DROP TABLE IF EXISTS Enderecos;
-DROP TABLE IF EXISTS Funcionarios;
-DROP TABLE IF EXISTS Cliente_Fisico;
-DROP TABLE IF EXISTS Cliente_Juridico;
-DROP TABLE IF EXISTS Historico;
-DROP TABLE IF EXISTS Pessoas;

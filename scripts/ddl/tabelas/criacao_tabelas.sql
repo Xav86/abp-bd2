@@ -96,7 +96,7 @@ GO
 CREATE TABLE [Pecas_Estoque] (
   [id] smallint PRIMARY KEY IDENTITY(1, 1),
   [nome] varchar(100),
-  [descricao] varchar(max),
+  [descricao] text,
   [quantidade_estoque] int,
   [preco_unitario] numeric(14,2)
 )
@@ -111,10 +111,15 @@ CREATE TABLE [Pecas_OS] (
 )
 GO
 
-CREATE TABLE [Historico] (
+CREATE TABLE [Historico_Ordens] (
   [id] int PRIMARY KEY IDENTITY(1, 1),
-  [log] varchar(max),
-  [data_hora] smalldatetime
+  [id_usuario] int,
+  [id_ordem_servico] int,
+  [campo_alterado] varchar(100),
+  [valor_anterior] varchar(max),
+  [valor_novo] varchar(max),
+  [data_alteracao] datetime DEFAULT (GETDATE()),
+  [observacoes] text
 )
 GO
 
@@ -155,4 +160,10 @@ ALTER TABLE [Pecas_OS] ADD FOREIGN KEY ([id_ordem_servico]) REFERENCES [Ordens_d
 GO
 
 ALTER TABLE [Pecas_OS] ADD FOREIGN KEY ([id_peca]) REFERENCES [Pecas_Estoque] ([id])
+GO
+
+ALTER TABLE [Historico_Ordens] ADD FOREIGN KEY ([id_usuario]) REFERENCES [Pessoas] ([id])
+GO
+
+ALTER TABLE [Historico_Ordens] ADD FOREIGN KEY ([id_ordem_servico]) REFERENCES [Ordens_de_Servico] ([id])
 GO
