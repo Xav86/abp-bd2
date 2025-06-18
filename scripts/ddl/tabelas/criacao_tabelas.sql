@@ -1,125 +1,125 @@
 CREATE TABLE [Pessoas] (
-  [id] int PRIMARY KEY IDENTITY(1, 1),
-  [nome] varchar(100),
-  [telefone] varchar(20),
-  [email] varchar(100)
+  [id] int PRIMARY KEY NOT NULL IDENTITY(1, 1),
+  [nome] varchar(100) NOT NULL,
+  [telefone] varchar(20) NOT NULL,
+  [email] varchar(100) NOT NULL
 )
 GO
 
 CREATE TABLE [Enderecos] (
-  [id] int PRIMARY KEY IDENTITY(1, 1),
-  [id_usuario] int,
-  [logradouro] varchar(100),
-  [numero] varchar(10),
-  [complemento] varchar(50),
-  [bairro] varchar(50),
-  [cidade] varchar(50),
-  [estado] varchar(2),
-  [cep] varchar(10)
+  [id] int PRIMARY KEY NOT NULL IDENTITY(1, 1),
+  [id_usuario] int NOT NULL,
+  [logradouro] varchar(100) NOT NULL,
+  [numero] varchar(10) NOT NULL,
+  [complemento] varchar(50) NOT NULL,
+  [bairro] varchar(50) NOT NULL,
+  [cidade] varchar(50) NOT NULL,
+  [estado] varchar(2) NOT NULL,
+  [cep] varchar(10) NOT NULL
 )
 GO
 
 CREATE TABLE [Cliente_Fisico] (
-  [id_usuario] int PRIMARY KEY,
-  [cpf] char(11) UNIQUE
+  [id_usuario] int PRIMARY KEY NOT NULL,
+  [cpf] char(11) UNIQUE NOT NULL
 )
 GO
 
 CREATE TABLE [Cliente_Juridico] (
-  [id_usuario] int PRIMARY KEY,
-  [cnpj] char(14) UNIQUE
+  [id_usuario] int PRIMARY KEY NOT NULL,
+  [cnpj] char(14) UNIQUE NOT NULL
 )
 GO
 
 CREATE TABLE [Funcionarios] (
-  [id_usuario] int PRIMARY KEY,
-  [funcao] varchar(50),
-  [data_admissao] date,
-  [ativo] bit,
-  [salario] numeric(14,2)
+  [id_usuario] int PRIMARY KEY NOT NULL,
+  [funcao] varchar(50) NOT NULL,
+  [data_admissao] date NOT NULL,
+  [ativo] bit NOT NULL,
+  [salario] numeric(14,2) NOT NULL
 )
 GO
 
 CREATE TABLE [Veiculos] (
-  [id] int PRIMARY KEY IDENTITY(1, 1),
-  [id_cliente] int,
-  [placa] varchar(10) UNIQUE,
-  [modelo] varchar(50),
-  [marca] varchar(50),
-  [ano_fabricacao] int,
-  [chassi] varchar(30),
-  [quilometragem] int,
-  [status] varchar(20)
+  [id] int PRIMARY KEY NOT NULL IDENTITY(1, 1),
+  [placa] varchar(10) UNIQUE NOT NULL,
+  [modelo] varchar(50) NOT NULL,
+  [marca] varchar(50) NOT NULL,
+  [ano_fabricacao] char(4) NOT NULL,
+  [chassi] char(17) NOT NULL,
+  [quilometragem] smallint NOT NULL
 )
 GO
 
 CREATE TABLE [Servicos] (
-  [id] smallint PRIMARY KEY IDENTITY(1, 1),
-  [nome] varchar(100),
-  [descricao] varchar(max),
-  [preco_padrao] numeric(14,2),
-  [tempo_estimado] int
+  [id] smallint PRIMARY KEY NOT NULL IDENTITY(1, 1),
+  [nome] varchar(100) NOT NULL,
+  [descricao] varchar(max) NOT NULL,
+  [preco_padrao] numeric(14,2) NOT NULL,
+  [tempo_estimado] smallint NOT NULL
 )
 GO
 
 CREATE TABLE [Ordens_de_Servico] (
-  [id] int PRIMARY KEY IDENTITY(1, 1),
-  [id_veiculo] int,
-  [id_cliente] int,
-  [data_entrada] datetime,
-  [data_saida] datetime,
-  [titulo] varchar(100),
-  [descricao] text,
-  [status] varchar(20)
+  [id] int PRIMARY KEY NOT NULL IDENTITY(1, 1),
+  [id_veiculo] int NOT NULL,
+  [id_cliente] int NOT NULL,
+  [data_entrada] date NOT NULL,
+  [data_saida] date,
+  [data_meta] date NOT NULL,
+  [titulo] varchar(100) NOT NULL,
+  [descricao] varchar(max) NOT NULL,
+  [status] char(4) NOT NULL
 )
 GO
 
 CREATE TABLE [Funcionarios_OS] (
-  [id] int PRIMARY KEY IDENTITY(1, 1),
-  [id_ordem_servico] int,
-  [id_funcionario] int,
-  [funcao_na_ordem] varchar(50),
-  [tempo_trabalhado] int,
-  [observacoes] text
+  [id] int PRIMARY KEY NOT NULL IDENTITY(1, 1),
+  [id_ordem_servico] int NOT NULL,
+  [id_funcionario] int NOT NULL,
+  [funcao_na_ordem] varchar(50) NOT NULL,
+  [tempo_trabalhado] smallint NOT NULL,
+  [observacoes] varchar(max) NOT NULL
 )
 GO
 
 CREATE TABLE [Itens_Servico_OS] (
-  [id] int PRIMARY KEY IDENTITY(1, 1),
-  [id_ordem_servico] int,
-  [id_servico] smallint,
-  [quantidade] int,
-  [preco_realizado] numeric(14,2)
+  [id] int PRIMARY KEY NOT NULL IDENTITY(1, 1),
+  [id_ordem_servico] int NOT NULL,
+  [id_servico] smallint NOT NULL,
+  [quantidade] smallint NOT NULL,
+  [preco_realizado] numeric(14,2) NOT NULL
 )
 GO
 
 CREATE TABLE [Pecas_Estoque] (
-  [id] smallint PRIMARY KEY IDENTITY(1, 1),
-  [nome] varchar(100),
-  [descricao] text,
-  [quantidade_estoque] int,
-  [preco_unitario] numeric(14,2)
+  [id] smallint PRIMARY KEY NOT NULL IDENTITY(1, 1),
+  [nome] varchar(100) NOT NULL,
+  [descricao] varchar(max) NOT NULL,
+  [quantidade_estoque] int NOT NULL,
+  [preco_unitario] numeric(14,2) NOT NULL
 )
 GO
 
 CREATE TABLE [Pecas_OS] (
-  [id] int PRIMARY KEY IDENTITY(1, 1),
-  [id_ordem_servico] int,
-  [id_peca] smallint,
-  [quantidade] int,
-  [preco_unitario] numeric(14,2)
+  [id] int PRIMARY KEY NOT NULL IDENTITY(1, 1),
+  [id_ordem_servico] int NOT NULL,
+  [id_peca] smallint NOT NULL,
+  [quantidade] int NOT NULL,
+  [preco_unitario] numeric(14,2) NOT NULL
 )
 GO
 
 CREATE TABLE [Historico_Ordens] (
-  [id] int PRIMARY KEY IDENTITY(1, 1),
-  [id_usuario] int,
-  [id_ordem_servico] int,
+  [id] int PRIMARY KEY NOT NULL IDENTITY(1, 1),
+  [id_usuario] int NOT NULL,
+  [id_ordem_servico] int NOT NULL,
   [campo_alterado] varchar(100),
-  [valor_anterior] varchar(max),
-  [valor_novo] varchar(max),
-  [data_alteracao] datetime DEFAULT (GETDATE()),
-  [observacoes] text
+  [valor_anterior] varchar(max) NOT NULL,
+  [valor_novo] varchar(max) NOT NULL,
+  [hora_alteracao] time NOT NULL,
+  [data_alteracao] date NOT NULL DEFAULT (GETDATE()),
+  [observacoes] varchar(max) NOT NULL
 )
 GO
 
@@ -133,9 +133,6 @@ ALTER TABLE [Cliente_Juridico] ADD FOREIGN KEY ([id_usuario]) REFERENCES [Pessoa
 GO
 
 ALTER TABLE [Funcionarios] ADD FOREIGN KEY ([id_usuario]) REFERENCES [Pessoas] ([id])
-GO
-
-ALTER TABLE [Veiculos] ADD FOREIGN KEY ([id_cliente]) REFERENCES [Pessoas] ([id])
 GO
 
 ALTER TABLE [Ordens_de_Servico] ADD FOREIGN KEY ([id_veiculo]) REFERENCES [Veiculos] ([id])
