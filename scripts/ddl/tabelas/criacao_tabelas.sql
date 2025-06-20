@@ -47,7 +47,7 @@ CREATE TABLE [Veiculos] (
   [marca] varchar(50) NOT NULL,
   [ano_fabricacao] char(4) NOT NULL,
   [chassi] char(17) NOT NULL,
-  [quilometragem] smallint NOT NULL
+  [quilometragem] int NOT NULL
 )
 GO
 
@@ -60,6 +60,12 @@ CREATE TABLE [Servicos] (
 )
 GO
 
+CREATE TABLE [Status] (
+  [id] tinyint PRIMARY KEY NOT NULL IDENTITY(1, 1),
+  [descricao] varchar(50) NOT NULL
+)
+GO
+
 CREATE TABLE [Ordens_de_Servico] (
   [id] int PRIMARY KEY NOT NULL IDENTITY(1, 1),
   [id_veiculo] int NOT NULL,
@@ -69,7 +75,7 @@ CREATE TABLE [Ordens_de_Servico] (
   [data_meta] date NOT NULL,
   [titulo] varchar(100) NOT NULL,
   [descricao] varchar(max) NOT NULL,
-  [status] char(4) NOT NULL
+  [status_id] tinyint NOT NULL
 )
 GO
 
@@ -139,6 +145,9 @@ ALTER TABLE [Ordens_de_Servico] ADD FOREIGN KEY ([id_veiculo]) REFERENCES [Veicu
 GO
 
 ALTER TABLE [Ordens_de_Servico] ADD FOREIGN KEY ([id_cliente]) REFERENCES [Pessoas] ([id])
+GO
+
+ALTER TABLE [Ordens_de_Servico] ADD FOREIGN KEY ([status_id]) REFERENCES [Status] ([id])
 GO
 
 ALTER TABLE [Funcionarios_OS] ADD FOREIGN KEY ([id_ordem_servico]) REFERENCES [Ordens_de_Servico] ([id])
