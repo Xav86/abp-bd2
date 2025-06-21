@@ -1,6 +1,13 @@
 
 <?php include 'elements/layout/header.php'; ?>
-<?php include 'dados.php'; ?>
+<?php
+require __DIR__ . '/config/db.php'; 
+
+$stmt = $pdo->query("SELECT * FROM veiculos ORDER BY id DESC");
+$veiculos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+
+?>
 
 <div style="padding-top: 50px;" class="container">
 
@@ -24,15 +31,14 @@
                 <tr>
                     <td><?= $v['id'] ?></td>
                     <td><?= $v['modelo'] ?></td>
-                    <td><?= $v['ano'] ?></td>
+                    <td><?= $v['ano_fabricacao'] ?></td>
                     <td>
-                        <button class="btn btn-warning btnEditar"> 
+                        <a href="edit.php?id=<?= $v['id'] ?>" class="btn btn-warning btnEditar">
                             Editar
-                        </button>
-    
-                        <button class="btn btn-warning">
+                        </a>
+                        <a href="./src/controller.php?action=delete&id=<?= $v['id'] ?>" class="btn btn-danger" onclick="return confirm('Deseja excluir?')">
                             Deletar
-                        </button>
+                        </a>
                     </td>
                 </tr>
                 <?php endforeach; ?>

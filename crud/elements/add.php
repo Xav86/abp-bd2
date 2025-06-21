@@ -1,8 +1,4 @@
-<form id="formVeiculo" action="adicionar.php" method="POST">
-    <div class="mb-3">
-        <label for="id_cliente" class="form-label">ID do Cliente</label>
-        <input type="number" class="form-control" id="id_cliente" name="id_cliente" required>
-    </div>
+<form id="formVeiculo" action="./src/controller.php?action=add" method="POST">
 
     <div class="mb-3">
         <label for="placa" class="form-label">Placa</label>
@@ -34,15 +30,6 @@
         <input type="number" class="form-control" id="quilometragem" name="quilometragem" min="0" required>
     </div>
 
-    <div class="mb-3">
-        <label for="status" class="form-label">Status</label>
-        <select class="form-control" id="status" name="status" required>
-            <option value="">Selecione o status</option>
-            <option value="ativo">Ativo</option>
-            <option value="inativo">Inativo</option>
-            <option value="manutencao">Manutenção</option>
-        </select>
-    </div>
 
     <button type="submit" class="btn btn-success">Salvar</button>
     <button type="button" id="btnCancelar" class="btn btn-secondary">Cancelar</button>
