@@ -155,43 +155,43 @@ INSERT INTO Status (descricao) VALUES
 
 -- 8. Ordens de Servico
 PRINT 'Inserindo Ordens de Serviço...'
-INSERT INTO Ordens_de_Servico (id_veiculo, id_cliente, data_entrada, data_saida, data_meta, titulo, descricao, status_id) VALUES
-(1, 1, '2024-06-10 08:00:00', '2024-06-10 12:00:00', '2024-06-10', 'Revisao basica Uno', 'Troca de oleo e revisao geral.', 5),
-(2, 2, '2024-06-11 09:15:00', '2024-06-11 11:00:00', '2024-06-11', 'Alinhamento e balanceamento Civic', 'Verificar direcao puxando para o lado.', 5),
-(3, 4, '2024-06-12 14:00:00', NULL, '2024-06-13', 'Freios fazendo barulho Gol', 'Cliente reclama de ruido ao frear.', 2),
-(4, 5, '2024-06-13 10:00:00', NULL, '2024-06-14', 'Motor falhando Ka', 'Realizar diagnostico via scanner.', 3),
-(5, 6, '2024-06-14 08:30:00', NULL, '2024-06-17', 'Revisao de 40.000km Strada', 'Executar revisao conforme manual.', 3),
-(6, 7, '2024-06-17 11:00:00', NULL, '2024-06-18', 'Ar condicionado nao gela HB20', 'Verificar sistema e possivel vazamento.', 4),
-(7, 8, '2024-06-18 09:00:00', NULL, '2024-06-18', 'Orcamento troca de correia Onix', 'Apenas orcamento, nao executar.', 1),
-(8, 2, '2024-06-19 10:30:00', NULL, '2024-06-20', 'Troca de pneus Corolla', 'Substituir os 4 pneus, alinhar e balancear.', 1),
-(9, 6, '2024-06-20 15:00:00', NULL, '2024-06-21', 'Luz da injecao acesa Toro', 'Passar scanner e identificar falha.', 3),
-(10, 9, '2024-06-21 16:00:00', NULL, '2024-06-22', 'Orcamento amortecedores Kwid', 'Cliente solicitou orcamento para troca dos 4 amortecedores.', 2),
-(11, 11, '2024-06-22 09:00:00', NULL, '2024-06-24', 'Revisão 50.000km Creta', 'Fazer revisão completa conforme manual do proprietário.', 3),
-(12, 12, '2024-06-24 10:30:00', NULL, '2024-06-25', 'Sistema de ar condicionado', 'Ar condicionado parou de gelar e faz barulho.', 4),
-(13, 13, '2024-06-25 08:00:00', NULL, '2024-06-26', 'Troca de embreagem Iveco', 'Embreagem patinando em subidas com carga.', 3),
-(14, 14, '2024-06-25 11:00:00', '2024-06-25 17:00:00', '2024-06-25', 'Troca correia dentada Polo', 'Cliente solicitou troca preventiva da correia.', 5),
-(15, 15, '2024-06-26 14:00:00', NULL, '2024-06-27', 'Barulho na suspensão Fit', 'Verificar barulho na parte dianteira ao passar em buracos.', 1);
+INSERT INTO Ordens_de_Servico (id_veiculo, id_cliente, data_entrada, data_saida, data_meta, titulo, descricao) VALUES
+(1, 1, '2024-06-10 08:00:00', '2024-06-10 12:00:00', '2024-06-10', 'Revisao basica Uno', 'Troca de oleo e revisao geral.'),
+(2, 2, '2024-06-11 09:15:00', '2024-06-11 11:00:00', '2024-06-11', 'Alinhamento e balanceamento Civic', 'Verificar direcao puxando para o lado.'),
+(3, 4, '2024-06-12 14:00:00', NULL, '2024-06-13', 'Freios fazendo barulho Gol', 'Cliente reclama de ruido ao frear.'),
+(4, 5, '2024-06-13 10:00:00', NULL, '2024-06-14', 'Motor falhando Ka', 'Realizar diagnostico via scanner.'),
+(5, 6, '2024-06-14 08:30:00', NULL, '2024-06-17', 'Revisao de 40.000km Strada', 'Executar revisao conforme manual.'),
+(6, 7, '2024-06-17 11:00:00', NULL, '2024-06-18', 'Ar condicionado nao gela HB20', 'Verificar sistema e possivel vazamento.'),
+(7, 8, '2024-06-18 09:00:00', NULL, '2024-06-18', 'Orcamento troca de correia Onix', 'Apenas orcamento, nao executar.'),
+(8, 2, '2024-06-19 10:30:00', NULL, '2024-06-20', 'Troca de pneus Corolla', 'Substituir os 4 pneus, alinhar e balancear.'),
+(9, 6, '2024-06-20 15:00:00', NULL, '2024-06-21', 'Luz da injecao acesa Toro', 'Passar scanner e identificar falha.'),
+(10, 9, '2024-06-21 16:00:00', NULL, '2024-06-22', 'Orcamento amortecedores Kwid', 'Cliente solicitou orcamento para troca dos 4 amortecedores.'),
+(11, 11, '2024-06-22 09:00:00', NULL, '2024-06-24', 'Revisão 50.000km Creta', 'Fazer revisão completa conforme manual do proprietário.'),
+(12, 12, '2024-06-24 10:30:00', NULL, '2024-06-25', 'Sistema de ar condicionado', 'Ar condicionado parou de gelar e faz barulho.'),
+(13, 13, '2024-06-25 08:00:00', NULL, '2024-06-26', 'Troca de embreagem Iveco', 'Embreagem patinando em subidas com carga.'),
+(14, 14, '2024-06-25 11:00:00', '2024-06-25 17:00:00', '2024-06-25', 'Troca correia dentada Polo', 'Cliente solicitou troca preventiva da correia.'),
+(15, 15, '2024-06-26 14:00:00', NULL, '2024-06-27', 'Barulho na suspensão Fit', 'Verificar barulho na parte dianteira ao passar em buracos.');
 GO
 
 -- 9. Itens de Servico por OS
 PRINT 'Relacionando Serviços às Ordens de Serviço...'
-INSERT INTO Itens_Servico_OS (id_ordem_servico, id_servico, quantidade, preco_realizado) VALUES
-(1, 1, 1, 175.00), -- OS 1: Troca de oleo
-(2, 2, 1, 120.00), -- OS 2: Alinhamento
-(2, 3, 1, 80.00),  -- OS 2: Balanceamento
-(3, 4, 1, 240.00), -- OS 3: Troca de pastilhas
-(4, 6, 1, 100.00), -- OS 4: Diagnostico
-(5, 5, 1, 450.00), -- OS 5: Revisao completa
-(6, 9, 1, 350.00), -- OS 6: Reparo Ar Cond.
-(7, 8, 1, 600.00), -- OS 7: Orcamento Correia
-(8, 2, 1, 120.00), -- OS 8: Alinhamento
-(8, 3, 4, 80.00),  -- OS 8: Balanceamento
-(9, 6, 1, 100.00), -- OS 9: Diagnostico
-(11, 5, 1, 450.00), -- OS 11: Revisão completa
-(12, 9, 1, 350.00), -- OS 12: Reparo no ar condicionado
-(13, 1, 1, 800.00), -- OS 13: Custo customizado para troca de embreagem
-(14, 8, 1, 620.00), -- OS 14: Troca da correia dentada
-(15, 2, 1, 120.00); -- OS 15: Alinhamento para checagem da suspensão
+INSERT INTO Itens_Servico_OS (id_ordem_servico, id_servico, preco_realizado) VALUES
+(1, 1,  175.00), -- OS 1: Troca de oleo
+(2, 2,  120.00), -- OS 2: Alinhamento
+(2, 3,  80.00),  -- OS 2: Balanceamento
+(3, 4,  240.00), -- OS 3: Troca de pastilhas
+(4, 6,  100.00), -- OS 4: Diagnostico
+(5, 5,  450.00), -- OS 5: Revisao completa
+(6, 9,  350.00), -- OS 6: Reparo Ar Cond.
+(7, 8,  600.00), -- OS 7: Orcamento Correia
+(8, 2,  120.00), -- OS 8: Alinhamento
+(8, 3,  80.00),  -- OS 8: Balanceamento
+(9, 6,  100.00), -- OS 9: Diagnostico
+(11, 5,  450.00), -- OS 11: Revisão completa
+(12, 9,  350.00), -- OS 12: Reparo no ar condicionado
+(13, 1,  800.00), -- OS 13: Custo customizado para troca de embreagem
+(14, 8,  620.00), -- OS 14: Troca da correia dentada
+(15, 2,  120.00); -- OS 15: Alinhamento para checagem da suspensão
 GO
 
 -- 10. Pecas utilizadas por OS
@@ -231,4 +231,3 @@ INSERT INTO Funcionarios_OS (id_ordem_servico, id_funcionario, funcao_na_ordem, 
 GO
 
 
-PRINT 'SCRIPT DE CRIAÇÃO E POPULAÇÃO FINALIZADO COM SUCESSO!'
