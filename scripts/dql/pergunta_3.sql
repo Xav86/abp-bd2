@@ -42,10 +42,10 @@ ServicoMaisOfertado AS (
 -- resultado final
 -- trazendo em uma unica consulta a soma dos preços e chamando isso de faturamento, trazendo nome, vezes ofertado e preço médio trazendo tudo em todas as ctes
 SELECT
-  fs.total_servicos + fp.total_pecas AS faturamento_total,
+  FORMAT(fs.total_servicos + fp.total_pecas, 'N2', 'pt-BR') AS faturamento_total,
   smo.nome AS servico_mais_ofertado,
   smo.vezes_ofertado,
-  smo.preco_medio
+  FORMAT(smo.preco_medio, 'N2', 'pt-BR') AS preco_medio
 FROM FaturamentoServicos fs
 CROSS JOIN FaturamentoPecas fp
 CROSS JOIN ServicoMaisOfertado smo;
