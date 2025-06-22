@@ -125,7 +125,8 @@ INSERT INTO Servicos (nome, descricao, preco_padrao) VALUES
 ('Limpeza de bicos injetores', 'Limpeza e equalizacao dos bicos da injecao eletronica.', 200.00),
 ('Troca da correia dentada', 'Substituicao da correia dentada e tensionador.', 600.00),
 ('Reparo no ar condicionado', 'Diagnostico e recarga de gas do sistema de A/C.', 350.00),
-('Higienizacao do ar condicionado', 'Limpeza do sistema e troca do filtro de cabine.', 150.00);
+('Higienizacao do ar condicionado', 'Limpeza do sistema e troca do filtro de cabine.', 150.00),
+('Troca do conjunto de amortecedores', 'Substituicao dos amortecedores dianteiros e traseiros.', 900.00);
 GO
 
 -- 6. Pecas em Estoque
@@ -188,6 +189,7 @@ INSERT INTO Itens_Servico_OS (id_ordem_servico, id_servico, preco_realizado) VAL
 (8, 2,  120.00), -- OS 8: Alinhamento
 (8, 3,  80.00),  -- OS 8: Balanceamento
 (9, 6,  100.00), -- OS 9: Diagnostico
+(10, 10,  900.00), -- OS 10: Orcamento Amortecedores
 (11, 5,  450.00), -- OS 11: Revisão completa
 (12, 9,  350.00), -- OS 12: Reparo no ar condicionado
 (13, 1,  800.00), -- OS 13: Custo customizado para troca de embreagem
