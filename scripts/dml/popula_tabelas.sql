@@ -198,16 +198,36 @@ GO
 -- 10. Pecas utilizadas por OS
 PRINT 'Relacionando Peças às Ordens de Serviço...'
 INSERT INTO Pecas_OS (id_ordem_servico, id_peca, quantidade, preco_unitario) VALUES
-(1, 1, 1, 30.00),  -- OS 1: Filtro de oleo
-(1, 3, 4, 55.00),  -- OS 1: 4L de oleo
-(3, 4, 1, 90.00),  -- OS 3: Par de pastilhas
-(5, 1, 1, 30.00),  -- OS 5: Filtro de oleo
-(5, 5, 1, 45.00),  -- OS 5: Filtro de ar
-(5, 7, 4, 25.00),  -- OS 5: 4 velas
-(8, 2, 4, 310.00), -- OS 8: 4 Pneus
-(11, 3, 5, 55.00), -- OS 11: 5L de oleo
-(11, 5, 1, 45.00), -- OS 11: Filtro de ar
-(11, 8, 1, 35.00), -- OS 11: Filtro de cabine
+(1, 1, 1, 30.00);  -- OS 1: Filtro de oleo
+Go
+INSERT INTO Pecas_OS (id_ordem_servico, id_peca, quantidade, preco_unitario) VALUES
+(1, 3, 4, 55.00);  -- OS 1: 4L de oleo
+GO
+INSERT INTO Pecas_OS (id_ordem_servico, id_peca, quantidade, preco_unitario) VALUES
+(3, 4, 1, 90.00);  -- OS 3: Par de pastilhas
+GO
+INSERT INTO Pecas_OS (id_ordem_servico, id_peca, quantidade, preco_unitario) VALUES
+(5, 1, 1, 30.00);  -- OS 5: Filtro de oleo
+GO
+INSERT INTO Pecas_OS (id_ordem_servico, id_peca, quantidade, preco_unitario) VALUES
+(5, 5, 1, 45.00);  -- OS 5: Filtro de ar
+GO
+INSERT INTO Pecas_OS (id_ordem_servico, id_peca, quantidade, preco_unitario) VALUES
+(5, 7, 4, 25.00);  -- OS 5: 4 velas
+GO
+INSERT INTO Pecas_OS (id_ordem_servico, id_peca, quantidade, preco_unitario) VALUES
+(8, 2, 4, 310.00); -- OS 8: 4 Pneus
+GO
+INSERT INTO Pecas_OS (id_ordem_servico, id_peca, quantidade, preco_unitario) VALUES
+(11, 3, 5, 55.00); -- OS 11: 5L de oleo
+GO
+INSERT INTO Pecas_OS (id_ordem_servico, id_peca, quantidade, preco_unitario) VALUES
+(11, 5, 1, 45.00); -- OS 11: Filtro de ar
+GO
+INSERT INTO Pecas_OS (id_ordem_servico, id_peca, quantidade, preco_unitario) VALUES
+(11, 8, 1, 35.00); -- OS 11: Filtro de cabine
+GO
+INSERT INTO Pecas_OS (id_ordem_servico, id_peca, quantidade, preco_unitario) VALUES
 (14, 6, 1, 150.00);-- OS 14: Correia dentada (preço pode variar por modelo)
 GO
 

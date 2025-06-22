@@ -6,9 +6,25 @@ ON Pecas_OS
 AFTER INSERT, UPDATE, DELETE
 AS
 BEGIN
+    declare @quantidade_estoque int;
+    declare @quantidade_peca int;
 
     IF EXISTS (SELECT 1 FROM inserted)
     BEGIN
+
+        SELECT @quantidade_estoque = quantidade_estoque
+        FROM Pecas_Estoque
+        WHERE id = (SELECT TOP 1 id_peca FROM inserted); 
+
+        SELECT @quantidade_peca = SUM(quantidade)
+        FROM inserted
+        WHERE id_peca = (SELECT TOP 1 id_peca FROM inserted); 
+        
+        IF @quantidade_estoque < @quantidade_peca
+        BEGIN
+            THROW 50002, 'Estoque insuficiente para a peça.', 1;
+        END
+
         UPDATE pe
         SET 
             pe.quantidade_estoque = pe.quantidade_estoque - i.total_quantidade
