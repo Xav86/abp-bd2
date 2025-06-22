@@ -86,7 +86,6 @@ CREATE TABLE [Itens_Servico_OS] (
   [id] int PRIMARY KEY NOT NULL IDENTITY(1, 1),
   [id_ordem_servico] int NOT NULL,
   [id_servico] smallint NOT NULL,
-  [quantidade] smallint NOT NULL,
   [preco_realizado] numeric(14,2) NOT NULL
 )
 GO
@@ -113,12 +112,10 @@ CREATE TABLE [Historico_Ordens] (
   [id] int PRIMARY KEY NOT NULL IDENTITY(1, 1),
   [id_pessoa] int NOT NULL,
   [id_ordem_servico] int NOT NULL,
-  [campo_alterado] varchar(100),
-  [valor_anterior] varchar(max) NOT NULL,
-  [valor_novo] varchar(max) NOT NULL,
   [hora_alteracao] time NOT NULL,
   [data_alteracao] date NOT NULL DEFAULT (GETDATE()),
-  [observacoes] varchar(max) NOT NULL
+  [observacoes] varchar(max) NOT NULL,
+  [status_id] tinyint NOT NULL
 )
 GO
 
