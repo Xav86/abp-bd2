@@ -1,24 +1,45 @@
 /* Quais os 5 clientes que mais geraram receita no último semestre,
  considerando apenas ordens finalizadas, o total gasto por cada um? */
+ 
+WITH ReceitaPorOS_CTE AS (
+    SELECT
+        os.id,
+        os.id_cliente,
+        (ISNULL(Servicos.Total_Servicos, 0) + ISNULL(Pecas.Total_Pecas, 0)) AS Total_Receita_OS
+    FROM
+        Ordens_de_Servico os
+    LEFT JOIN (
+        SELECT id_ordem_servico, SUM(preco_realizado) AS Total_Servicos
+        FROM Itens_Servico_OS
+        GROUP BY id_ordem_servico
+    ) AS Servicos ON os.id = Servicos.id_ordem_servico
+    LEFT JOIN (
+        SELECT id_ordem_servico, SUM(quantidade * preco_unitario) AS Total_Pecas
+        FROM Pecas_OS
+        GROUP BY id_ordem_servico
+    ) AS Pecas ON os.id = Pecas.id_ordem_servico
+    WHERE
+        os.status = 5
+        AND os.data_saida >= DATEADD(MONTH, -6, GETDATE())
+),
+TotalPorCliente_CTE AS (
+    SELECT
+        r.id_cliente,
+        SUM(r.Total_Receita_OS) AS Total_Gasto_Cliente
+    FROM
+        ReceitaPorOS_CTE r
+    GROUP BY
+        r.id_cliente
+)
 
+-- Consulta final 
 SELECT TOP 5
-    Pessoas_cliente.nome AS 'Cliente',
-    SUM(
-        ISNULL((SELECT SUM(iso.preco_realizado) FROM Itens_Servico_OS iso WHERE iso.id_ordem_servico = os.id), 0) +
-        ISNULL((SELECT SUM(pos.quantidade * pos.preco_unitario) FROM Pecas_OS pos WHERE pos.id_ordem_servico = os.id), 0)
-    ) AS 'Total_Gasto'
+    p.nome AS 'Cliente',
+    cte.Total_Gasto_Cliente AS 'Total_Gasto'
 FROM
-    Ordens_de_Servico os
+    TotalPorCliente_CTE cte
 JOIN
-    Pessoas Pessoas_cliente ON os.id_cliente = Pessoas_cliente.id
-WHERE
-    os.status = 5 AND
-    os.data_saida >= DATEADD(MONTH, -6, GETDATE())
-GROUP BY
-    Pessoas_cliente.nome 
+    Pessoas p ON cte.id_cliente = p.id
 ORDER BY
-    SUM(
-        ISNULL((SELECT SUM(iso.preco_realizado) FROM Itens_Servico_OS iso WHERE iso.id_ordem_servico = os.id), 0) +
-        ISNULL((SELECT SUM(pos.quantidade * pos.preco_unitario) FROM Pecas_OS pos WHERE pos.id_ordem_servico = os.id), 0)
-    ) DESC;
+    Total_Gasto_Cliente DESC;
 GO

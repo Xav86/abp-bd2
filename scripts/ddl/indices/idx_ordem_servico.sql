@@ -1,17 +1,20 @@
-/* CREATE TABLE [Ordens_de_Servico] (
-  [id] int PRIMARY KEY NOT NULL IDENTITY(1, 1),
-  [id_veiculo] int NOT NULL,
-  [id_cliente] int NOT NULL,
-  [data_entrada] date NOT NULL,
-  [data_saida] date,
-  [data_meta] date NOT NULL,
-  [titulo] varchar(100) NOT NULL,
-  [descricao] varchar(max) NOT NULL,
-  [status_id] tinyint NOT NULL,
-)
-GO */
+CREATE NONCLUSTERED INDEX idx_ordens_por_data_entrada_saida
+ON Ordens_de_Servico (status,data_entrada, data_saida)
+INCLUDE (id, id_veiculo, id_cliente, titulo, descricao);
+GO
 
-CREATE NONCLUSTERED INDEX idx_ordem_servico_status_includes
-ON Ordens_de_Servico (id)
-INCLUDE (id_veiculo,id_cliente,status_id,data_entrada,data_saida);
+CREATE NONCLUSTERED INDEX idx_pecas_os_por_ordem_servico
+ON Pecas_OS (id_ordem_servico,id_peca)
+INCLUDE (preco_unitario, quantidade);
+GO
+
+CREATE NONCLUSTERED INDEX idx_historico_ordens_por_ordem_servico
+ON Historico_Ordens (hora_alteracao, data_alteracao)
+INCLUDE (id_pessoa, id_ordem_servico, observacoes);
+GO
+
+
+CREATE NONCLUSTERED INDEX idx_itens_servico_os_por_ordem_servico
+ON Itens_Servico_OS (id_ordem_servico, id_servico)
+INCLUDE (preco_realizado);
 GO
