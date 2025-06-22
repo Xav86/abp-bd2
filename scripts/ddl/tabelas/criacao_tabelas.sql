@@ -47,7 +47,7 @@ CREATE TABLE [Veiculos] (
   [marca] varchar(50) NOT NULL,
   [ano_fabricacao] char(4) NOT NULL,
   [chassi] char(17) NOT NULL,
-  [quilometragem] smallint NOT NULL
+  [quilometragem] int NOT NULL
 )
 GO
 
@@ -114,8 +114,7 @@ CREATE TABLE [Historico_Ordens] (
   [id_ordem_servico] int NOT NULL,
   [hora_alteracao] time NOT NULL,
   [data_alteracao] date NOT NULL DEFAULT (GETDATE()),
-  [observacoes] varchar(max) NOT NULL,
-  [status_id] tinyint NOT NULL
+  [observacoes] varchar(max) NOT NULL
 )
 GO
 

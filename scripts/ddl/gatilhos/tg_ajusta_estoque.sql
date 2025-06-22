@@ -1,30 +1,38 @@
-
-DROP TRIGGER IF EXISTS tg_ajusta_estoque
+DROP TRIGGER IF EXISTS tg_ajusta_estoque;
 GO
 
 CREATE TRIGGER tg_ajusta_estoque
 ON Pecas_OS
-AFTER INSERT, DELETE
+AFTER INSERT, UPDATE, DELETE
 AS
 BEGIN
-    
-    DECLARE @id_peca SMALLINT;
-    DECLARE @quantidade INT;
 
     IF EXISTS (SELECT 1 FROM inserted)
     BEGIN
-        SELECT @id_peca = id_peca, @quantidade = quantidade FROM inserted;
-        UPDATE Pecas_Estoque
-        SET quantidade_estoque = quantidade_estoque - @quantidade
-        WHERE id = @id_peca;
+        UPDATE pe
+        SET 
+            pe.quantidade_estoque = pe.quantidade_estoque - i.total_quantidade
+        FROM 
+            Pecas_Estoque pe
+        JOIN 
+            (SELECT id_peca, SUM(quantidade) AS total_quantidade 
+             FROM inserted 
+             GROUP BY id_peca) AS i 
+        ON pe.id = i.id_peca;
     END
 
     IF EXISTS (SELECT 1 FROM deleted)
     BEGIN
-        SELECT @id_peca = id_peca, @quantidade = quantidade FROM deleted;
-        UPDATE Pecas_Estoque
-        SET quantidade_estoque = quantidade_estoque + @quantidade
-        WHERE id = @id_peca;
+        UPDATE pe
+        SET 
+            pe.quantidade_estoque = pe.quantidade_estoque + d.total_quantidade
+        FROM 
+            Pecas_Estoque pe
+        JOIN 
+            (SELECT id_peca, SUM(quantidade) AS total_quantidade 
+             FROM deleted 
+             GROUP BY id_peca) AS d 
+        ON pe.id = d.id_peca;
     END
 END;
 GO
