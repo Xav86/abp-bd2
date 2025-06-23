@@ -23,3 +23,12 @@ GO
 CREATE NONCLUSTERED INDEX idx_ordens_data_saida
 ON Ordens_de_Servico(data_saida)
 INCLUDE (id);
+
+/* Indices para a pergunta 1 */
+CREATE NONCLUSTERED INDEX idx_ordens_status_data_entrada
+ON Ordens_de_Servico ([status], data_entrada)
+INCLUDE (id);
+
+CREATE NONCLUSTERED INDEX idx_funcionarios_os_ordem_tempo_func
+ON Funcionarios_OS (id_ordem_servico, tempo_trabalhado)
+INCLUDE (id_funcionario);
