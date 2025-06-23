@@ -55,3 +55,17 @@ docker run xyz
 
 ### Relatório Final
 O relatório final está disponível no arquivo [relatorio-final/template1.docx](relatorio/template1.docx).
+
+### Bibliografia
+
+CORREIOS. **ENDEREÇAMENTO DE ENCOMENDAS GUIA TÉCNICO**. [s.l: s.n.]. Disponível em: <https://www.correios.com.br/enviar/encomendas/arquivo/nacional/guia-de-enderecamento.pdf>. Acesso em: 21 jun. 2025.
+
+MIKERAYMSFT. **int, bigint, smallint e tinyint (Transact-SQL) - SQL Server**. Disponível em: <https://learn.microsoft.com/pt-br/sql/t-sql/data-types/int-bigint-smallint-and-tinyint-transact-sql?view=sql-server-ver17>. Acesso em: 23 jun. 2025. 
+
+MIKERAYMSFT. **decimal e numeric (Transact-SQL) - SQL Server**. Disponível em: <https://learn.microsoft.com/pt-br/sql/t-sql/data-types/decimal-and-numeric-transact-sql?view=sql-server-ver16>. Acesso em: 23 jun. 2025. 
+
+MIKERAYMSFT. **char e varchar (Transact-SQL) - SQL Server**. Disponível em: <https://learn.microsoft.com/pt-br/sql/t-sql/data-types/char-and-varchar-transact-sql?view=sql-server-ver17>. 
+
+SANTANA, L. **Generalização e Especialização na Modelagem de Dados**. Disponível em: <https://consultabd.wordpress.com/2020/07/24/generalizacao-e-especializacao-na-modelagem-de-dados/>. Acesso em: 21 jun. 2025. 
+
+W3SCHOOL. **Tipos de dados SQL para MySQL, SQL Server e MS Access**. Disponível em: <https://www-w3schools-com.translate.goog/sql/sql_datatypes.asp?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt&_x_tr_pto=tc>. Acesso em: 21 jun. 2025. 
