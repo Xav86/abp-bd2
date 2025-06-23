@@ -15,7 +15,7 @@ Matheus Araújo de Melo - AqueleQueSemeiaOConhecimento
 Utilizamos a ferramenta de modelagem de dados [dbdiagram.io](https://dbdiagram.io/) para criação do modelo físico do banco de dados, para posterior exportação dos scripts DDL das tabelas e relacionamentos.<br>
 Arquivo fonte: [Modelo Fisico](https://dbdiagram.io/d/683653e36980ade2ebc12adc).<br>
 
-![image](./assets/image.png)
+![image](./modelo_fisico/modelo_fisico.png)
 
 ---
 
