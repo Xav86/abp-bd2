@@ -59,11 +59,11 @@ O relatório final está disponível no arquivo [relatorio-final/template1.docx]
 ### Bibliografia
 CORREIOS. **ENDEREÇAMENTO DE ENCOMENDAS GUIA TÉCNICO**. [s.l: s.n.]. Disponível em: <https://www.correios.com.br/enviar/encomendas/arquivo/nacional/guia-de-enderecamento.pdf>. Acesso em: 21 jun. 2025.
 
-DIZ, J. Índice de cobertura (covering index). Disponível em: <https://portosql.wordpress.com/2020/07/10/indice-de-cobertura/>. Acesso em: 23 jun. 2025. 
+DIZ, J. **Índice de cobertura (covering index)**. Disponível em: <https://portosql.wordpress.com/2020/07/10/indice-de-cobertura/>. Acesso em: 23 jun. 2025. 
 
-IURICODE. GitHub - iuricode/padroes-de-commits: Padrões de commits. Disponível em: <https://github.com/iuricode/padroes-de-commits>. 
+IURICODE. **GitHub - iuricode/padroes-de-commits: Padrões de commits**. Disponível em: <https://github.com/iuricode/padroes-de-commits>. 
 
-MARKINGMYNAME. DATEPART (Transact-SQL) - SQL Server. Disponível em: <https://learn.microsoft.com/pt-br/sql/t-sql/functions/datepart-transact-sql?view=sql-server-ver16>. Acesso em: 22 jun. 2025. 
+MARKINGMYNAME. **DATEPART (Transact-SQL) - SQL Server**. Disponível em: <https://learn.microsoft.com/pt-br/sql/t-sql/functions/datepart-transact-sql?view=sql-server-ver16>. Acesso em: 22 jun. 2025. 
 
 MIKERAYMSFT. **int, bigint, smallint e tinyint (Transact-SQL) - SQL Server**. Disponível em: <https://learn.microsoft.com/pt-br/sql/t-sql/data-types/int-bigint-smallint-and-tinyint-transact-sql?view=sql-server-ver17>. Acesso em: 23 jun. 2025. 
 
