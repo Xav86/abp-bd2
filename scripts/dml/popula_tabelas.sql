@@ -189,7 +189,7 @@ INSERT INTO Itens_Servico_OS (id_ordem_servico, id_servico, preco_realizado) VAL
 (8, 2,  120.00), -- OS 8: Alinhamento
 (8, 3,  80.00),  -- OS 8: Balanceamento
 (9, 6,  100.00), -- OS 9: Diagnostico
-(10, 10,  900.00), -- OS 10: Orcamento Amortecedores
+(10, 11,  900.00), -- OS 10: Orcamento Amortecedores
 (11, 5,  450.00), -- OS 11: Revisão completa
 (12, 9,  350.00), -- OS 12: Reparo no ar condicionado
 (13, 1,  800.00), -- OS 13: Custo customizado para troca de embreagem
