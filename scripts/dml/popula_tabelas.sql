@@ -398,10 +398,20 @@ INSERT INTO Ordens_de_Servico (id_veiculo, id_cliente, data_entrada, data_saida,
 (1, 5, '2025-03-10', '2025-03-12', '2025-03-15', 'Inspeção elétrica', 'Checagem completa do sistema elétrico', 5);
 
 -- Funcionários que participaram dessas ordens com tempo_trabalhado > 30
-INSERT INTO Funcionarios_OS (id_ordem_servico, id_funcionario, funcao_na_ordem, tempo_trabalhado, observacoes) VALUES
-(16, 3, 'Mecânico Chefe', 90, 'Responsável pelo serviço'),
-(16, 21, 'Eletricista', 45, 'Apoio técnico'),
-(17, 16, 'Mecânico', 120, 'Trabalho pesado'),
-(17, 10, 'Auxiliar', 60, 'Ajudou em diversas tarefas'),
-(18, 16, 'Mecânico', 80, 'Inspeção geral'),
-(18, 21, 'Eletricista', 70, 'Diagnóstico e conserto elétrico');
+EXEC pr_atualiza_os @id_pessoa = 3, @id_ordem_servico = 16, @observacoes = 'Serviço de troca de óleo iniciado.', @status_id = NULL, @funcao_na_ordem = 'Mecânico Chefe', @tempo_trabalhado = 90;
+GO
+
+EXEC pr_atualiza_os @id_pessoa = 21, @id_ordem_servico = 16, @observacoes = 'Apoio técnico ao mecânico chefe', @status_id = NULL, @funcao_na_ordem = 'Eletricista', @tempo_trabalhado = 45;
+GO
+
+EXEC pr_atualiza_os @id_pessoa = 16, @id_ordem_servico = 17, @observacoes = 'Iniciar serviço de alinhamento', @status_id = NULL, @funcao_na_ordem = 'Mecânico', @tempo_trabalhado = 120;
+GO
+
+EXEC pr_atualiza_os @id_pessoa = 10, @id_ordem_servico = 17, @observacoes = 'Auxiliar na limpeza de peças e ferramentas', @status_id = NULL, @funcao_na_ordem = 'Auxiliar', @tempo_trabalhado = 60;
+GO
+
+EXEC pr_atualiza_os @id_pessoa = 16, @id_ordem_servico = 18, @observacoes = 'Realizar inspeção geral do sistema elétrico', @status_id = NULL, @funcao_na_ordem = 'Mecânico', @tempo_trabalhado = 80;
+GO
+
+EXEC pr_atualiza_os @id_pessoa = 21, @id_ordem_servico = 18, @observacoes = 'Diagnóstico e conserto elétrico', @status_id = NULL, @funcao_na_ordem = 'Eletricista', @tempo_trabalhado = 70;
+GO
