@@ -1,3 +1,6 @@
+-- 6- Quais são as peças mais requisitadas de forma decescente nos últimos 30 dias e 90 dias, 
+-- quantas vezes foram utilizadas, e o valor total gerado com essas peças?
+
 SELECT 
     pe.nome AS nome_peca,
     COUNT(pos.id) AS vezes_utilizada,

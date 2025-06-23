@@ -1,3 +1,6 @@
+ -- 1: Quais são os 2 funcionários que mais participaram de ordens de serviço no primeiro trimestre de 2025,
+ -- considerando apenas os serviços concluídos e com tempo trabalhado acima de 30 minutos?
+
 WITH cte1 AS (
     SELECT id 
     FROM ordens_de_servico
