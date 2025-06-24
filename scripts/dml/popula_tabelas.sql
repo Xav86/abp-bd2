@@ -240,9 +240,9 @@ GO
 -- OS #1: Revisão Uno (Já finalizada, adicionando logs de trabalho)
 -- ===================================================================
 PRINT CHAR(13) + '--> Processando OS #1 (Revisão Uno)';
-EXEC pr_atualiza_os @id_pessoa = 16, @id_ordem_servico = 1, @observacoes = 'Iniciada a revisão básica e troca de óleo.', @status_id = NULL, @funcao_na_ordem = 'Mecânico', @tempo_trabalhado = 30;
+EXEC pr_atualiza_os @id_pessoa = 16, @id_ordem_servico = 1, @observacoes = 'Iniciada a revisão básica e troca de óleo.', @status_id = 3, @funcao_na_ordem = 'Mecânico', @tempo_trabalhado = 30;
 GO
-EXEC pr_atualiza_os @id_pessoa = 16, @id_ordem_servico = 1, @observacoes = 'Revisão concluída. Veículo lavado e pronto para entrega.', @status_id = NULL, @funcao_na_ordem = 'Mecânico', @tempo_trabalhado = 60;
+EXEC pr_atualiza_os @id_pessoa = 16, @id_ordem_servico = 1, @observacoes = 'Revisão concluída. Veículo lavado e pronto para entrega.', @status_id = 5, @funcao_na_ordem = 'Mecânico', @tempo_trabalhado = 60;
 GO
 
 -- ===================================================================
@@ -357,9 +357,9 @@ GO
 -- OS #14: Troca correia Polo (Já finalizada, adicionando logs)
 -- ===================================================================
 PRINT CHAR(13) + '--> Processando OS #14 (Troca correia Polo)';
-EXEC pr_atualiza_os @id_pessoa = 3, @id_ordem_servico = 14, @observacoes = 'Serviço de troca de correia iniciado.', @status_id = NULL, @funcao_na_ordem = 'Mecânico Chefe', @tempo_trabalhado = 60;
+EXEC pr_atualiza_os @id_pessoa = 3, @id_ordem_servico = 14, @observacoes = 'Serviço de troca de correia iniciado.', @status_id = 3, @funcao_na_ordem = 'Mecânico Chefe', @tempo_trabalhado = 60;
 GO
-EXEC pr_atualiza_os @id_pessoa = 3, @id_ordem_servico = 14, @observacoes = 'Troca preventiva da correia dentada e tensionador realizada.', @status_id = NULL, @funcao_na_ordem = 'Mecânico Chefe', @tempo_trabalhado = 90;
+EXEC pr_atualiza_os @id_pessoa = 3, @id_ordem_servico = 14, @observacoes = 'Troca preventiva da correia dentada e tensionador realizada.', @status_id = 5, @funcao_na_ordem = 'Mecânico Chefe', @tempo_trabalhado = 90;
 GO
 
 -- ===================================================================
