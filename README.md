@@ -1,7 +1,7 @@
 ## Projeto Sistema de Manutenção de Veiculos - GRUPO B
 
 Este projeto consiste na criação de um modelo físico de um banco de dados para um sistema de manutenção de veiculos.
-O projeto foi desenvolvido em PHP, criando um CRUD para cadastro dos itens **XXXX**, onde a aplicacao faz conexão com o banco de dados através de uma biblioteca chamada **XXXX** e realiza operações de adição, aualização e deleção dos dados, usando todos os conceitos e dinâmicas práticas de SQL desenvolvidas em aula.
+O projeto foi desenvolvido em PHP, criando um CRUD para cadastro de veículos, onde a aplicacao faz conexão com o banco de dados através de uma biblioteca chamada **XXXX** e realiza operações de adição, aualização e deleção dos dados, usando todos os conceitos e dinâmicas práticas de SQL desenvolvidas em aula.
 
 ### Integrantes
 Calebe Arlan Souza da Silva - CalebeArlan<br>
@@ -15,7 +15,7 @@ Matheus Araújo de Melo - AqueleQueSemeiaOConhecimento
 Utilizamos a ferramenta de modelagem de dados [dbdiagram.io](https://dbdiagram.io/) para criação do modelo físico do banco de dados, para posterior exportação dos scripts DDL das tabelas e relacionamentos.<br>
 Arquivo fonte: [Modelo Fisico](https://dbdiagram.io/d/683653e36980ade2ebc12adc).<br>
 
-![image](./modelo_fisico/modelo_fisico.png)
+![image](./modelo_fisico/Diagrama_Fisico.png)
 
 ---
 
