@@ -1,6 +1,6 @@
 <?php
 
-$host = 'azuresql-server-380301458.database.windows.net';
+$host = 'azuresql-server-44415360.database.windows.net';
 $dbname = 'dados';
 $user = 'admin_user';
 $pass = 'satc@2025';

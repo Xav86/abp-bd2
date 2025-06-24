@@ -37,18 +37,18 @@ Abaixo, segue os scripts SQL separados por tipo:
 + [DML](scripts/dml)
 
 ### Código Fonte do CRUD
-- Linguagem de Programação C# .NET.<br>
-- Framework .NET 4.6
-- Projeto Windows Forms
-- Biblioteca Entity Framework para SQL Server (nativo)
+- Linguagem de Programação PHP<br>
+- HTML
+- CSS
+- JS
+- Bootstrap
+- SQL Server
 
 ### Passos para execução do CRUD
 
-1. Criar banco de dados pelo docker.
+1. Criar banco de dados e alimentar
 ```
-docker run xyz
-```
-2. ...
+2. Fazer conexão com o arquivo  db.php do crud
    
 
 [Codigo Fonte](crud/)
